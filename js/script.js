@@ -49,3 +49,24 @@ images.forEach((img, index) => {
 
 
 
+// Utilizzo le frecce per spostarmi  nel carosello S
+const prevbtn = document.querySelector('.btn.prev');
+const nextbtn = document.querySelector('.btn.next');
+let currentIndex = 0;
+
+function altrielementi(index) {
+    const items = document.querySelectorAll('.carosello-list');
+    items.forEach((item, idx) => {
+        item.classList.toggle('active', idx === index);
+    });
+}
+//Aggiungo bottone eventlistener per scorrere le foto 
+prevbtn.addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    altrielementi(currentIndex);
+});
+
+nextbtn.addEventListener('click', () => {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    altrielementi(currentIndex);
+});
