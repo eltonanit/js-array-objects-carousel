@@ -39,3 +39,13 @@ function carosello(img, attiva) {
     `;
     return item;
 }
+
+// Aggiungo altri  elementi del carosello 
+images.forEach((img, index) => {
+    const attiva = index === 0;
+    const caroselloelemento = carosello(img, attiva);
+    carousel.appendChild(caroselloelemento);
+});
+
+
+
