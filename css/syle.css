@@ -1,0 +1,80 @@
+
+* { 
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+     
+    background-color: #c2b4b4;
+}
+
+.container {
+    position: relative;
+    width: 600px;
+    
+}
+
+.carosello {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+}
+
+.carosello-list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carosello-list.active {
+    display: block;
+    opacity: 1;
+}
+
+.carosello-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.descrizione{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(36, 24, 24, 0.5);
+    color: white;
+    padding: 10px;
+     
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.btn.prev {
+    left: 10px;
+}
+
+.btn.next {
+    right: 10px;
+}
